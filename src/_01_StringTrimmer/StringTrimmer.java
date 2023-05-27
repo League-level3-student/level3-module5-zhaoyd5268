@@ -8,7 +8,13 @@ public class StringTrimmer {
      */
     static public String trimString(String str, int removesLeft) {
         // 1. If there are no removes left
-            
+            if (removesLeft == 0) {
+            	return str;
+            } else {
+            	String newstr = str.substring(str.length()-1);
+            	removesLeft-=1;
+            	trimString(newstr,removesLeft);
+            }
             // 2. Return the string
 
         // 3. Else you need to remove the last letter from the string,
